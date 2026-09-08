@@ -64,7 +64,12 @@
     .logo {
         font-size: 20px;
     }
-
+     
+    .nav-links{
+        width: 100%;
+        gap: 5px;
+    }
+    
     .nav-links a {
         font-size: 13px;
         padding: 8px 10px;

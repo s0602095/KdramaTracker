@@ -93,3 +93,85 @@
 .buttons button:hover {
   background-color: #7c3aed;
 }
+
+/* Responsive Design für Tablet */
+@media (max-width: 700px) {
+
+    /* Weniger Abstand am Rand */
+    .detail-container {
+        padding: 20px 15px;
+    }
+
+    /* Karte etwas kleiner machen */
+    .drama-card {
+        padding: 18px;
+    }
+
+    /* Bild und Informationen untereinander */
+    .detail-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Bild auf Tablet etwas kleiner */
+    .detail-image {
+        width: 140px;
+        height: 190px;
+    }
+
+    /* Überschrift kleiner */
+    .drama-info h2 {
+        font-size: 22px;
+    }
+
+    /* Beschreibung linksbündig */
+    .description {
+        text-align: left;
+    }
+
+    /* Buttons dürfen in die nächste Zeile */
+    .buttons {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Responsive Design für Handy */
+@media (max-width: 500px) {
+
+    /* Überschrift auf dem Handy kleiner */
+    .detail-container h1 {
+        font-size: 25px;
+    }
+
+    /* Karte braucht weniger Platz */
+    .drama-card {
+        padding: 15px;
+    }
+
+    /* Bild auf dem Handy kleiner */
+    .detail-image {
+        width: 120px;
+        height: 170px;
+    }
+
+    /* Drama-Name kleiner */
+    .drama-info h2 {
+        font-size: 20px;
+    }
+
+    /* Informationen etwas kleiner */
+    .drama-info p {
+        font-size: 14px;
+    }
+
+    /* Buttons untereinander */
+    .buttons {
+        flex-direction: column;
+    }
+
+    /* Jeder Button nimmt die ganze Breite ein */
+    .buttons button {
+        width: 100%;
+    }
+}
