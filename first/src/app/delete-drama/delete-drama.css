@@ -60,3 +60,74 @@
 .buttons button:hover {
   opacity: 0.85;
 }
+
+/* Responsive Design für Tablet */
+@media (max-width: 700px) {
+
+    /* Weniger Abstand am Rand */
+    .delete-container {
+        padding: 25px 15px;
+    }
+
+    /* Karte etwas kleiner */
+    .delete-card {
+        padding: 25px;
+    }
+
+    /* Überschrift kleiner */
+    .delete-container h1 {
+        font-size: 27px;
+    }
+
+    /* Weniger Abstand zwischen den Buttons */
+    .buttons {
+        gap: 12px;
+    }
+}
+
+
+/* Responsive Design für Handy */
+@media (max-width: 500px) {
+
+    /* Weniger Abstand auf dem Handy */
+    .delete-container {
+        padding: 20px 10px;
+    }
+
+    /* Karte passt sich an die Bildschirmbreite an */
+    .delete-card {
+        padding: 20px 15px;
+        border-radius: 14px;
+    }
+
+    /* Überschrift kleiner */
+    .delete-container h1 {
+        font-size: 23px;
+    }
+
+    /* Frage kleiner */
+    .delete-card h2 {
+        font-size: 20px;
+    }
+
+    /* Text kleiner */
+    .delete-card p {
+        font-size: 14px;
+    }
+
+    /* Drama-Name etwas kleiner */
+    .drama-name {
+        font-size: 18px;
+    }
+
+    /* Buttons untereinander */
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Buttons volle Breite */
+    .buttons button {
+        width: 100%;
+    }
+}
