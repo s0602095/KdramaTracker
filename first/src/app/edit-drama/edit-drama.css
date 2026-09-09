@@ -76,3 +76,70 @@ button:not(.save) {
 button:hover {
   transform: translateY(-2px);
 }
+
+/* Responsive Design für Tablet */
+@media (max-width: 700px) {
+
+    /* Weniger Abstand am Rand */
+    .edit-container {
+        margin: 25px auto;
+        padding: 15px;
+    }
+
+    /* Karte etwas kleiner */
+    .edit-card {
+        padding: 25px;
+    }
+
+    /* Überschrift kleiner */
+    .edit-container h1 {
+        font-size: 27px;
+    }
+
+    /* Buttons etwas kleiner */
+    button {
+        padding: 11px 20px;
+    }
+}
+
+
+/* Responsive Design für Handy */
+@media (max-width: 500px) {
+
+    /* Weniger Abstand auf dem Handy */
+    .edit-container {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    /* Überschrift kleiner */
+    .edit-container h1 {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    /* Karte nutzt die verfügbare Breite */
+    .edit-card {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    /* Eingabefelder etwas kleiner */
+    input,
+    select,
+    textarea {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    /* Buttons untereinander */
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Buttons volle Breite */
+    button {
+        width: 100%;
+    }
+}
