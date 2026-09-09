@@ -72,3 +72,72 @@
   font-size: 13px;
   color: #aaa;
 }
+/* Responsive Design für Tablet */
+@media (max-width: 700px) {
+
+    /* Home-Bereich etwas kleiner machen */
+    .home {
+        height: 65vh;
+        padding: 15px;
+    }
+
+    /* Willkommensbox kleiner machen */
+    .welcome {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    /* Überschrift kleiner */
+    .welcome h1 {
+        font-size: 27px;
+    }
+
+    /* Text kleiner */
+    .welcome p {
+        font-size: 16px;
+    }
+}
+
+
+/* Responsive Design für Handy */
+@media (max-width: 500px) {
+
+    /* Weniger Abstand auf dem Handy */
+    .home {
+        height: 60vh;
+        padding: 10px;
+    }
+
+    /* Box nimmt fast die ganze Breite ein */
+    .welcome {
+        width: 100%;
+        padding: 25px 15px;
+        border-radius: 18px;
+    }
+
+    /* Überschrift kleiner */
+    .welcome h1 {
+        font-size: 23px;
+    }
+
+    /* Text kleiner */
+    .welcome p {
+        font-size: 14px;
+    }
+
+    /* Footer etwas kleiner */
+    .footer {
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    /* Footer-Text kleiner */
+    .footer-content p {
+        font-size: 14px;
+    }
+
+    /* Copyright kleiner */
+    .footer .copyright {
+        font-size: 12px;
+    }
+}
