@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -12,12 +13,21 @@ export class AddDrama {
   genre = '';
   bewertung = 0;
 
+  constructor(private http: HttpClient){}
+
   addDrama(){
   
-  console.log(this.name);
-  console.log(this.genre);
-  console.log(this.bewertung);
-  
+  const drama = {
+      name: this.name,
+      genre: this.genre,
+      bewertung: this.bewertung
+
+  };
+    this.http.post('http://localhost:3000/dramas', drama)
+    .subscribe(() => {
+      console.log('Drama wurde hinzugefügt');
+    });
 
   }
+  
 }
