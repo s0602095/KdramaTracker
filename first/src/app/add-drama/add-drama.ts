@@ -12,4 +12,12 @@ export class AddDrama {
   genre = '';
   bewertung = 0;
 
+  addDrama(){
+  
+  console.log(this.name);
+  console.log(this.genre);
+  console.log(this.bewertung);
+  
+
+  }
 }
