@@ -1,41 +1,64 @@
-body{
+body {
     margin: 0;
 }
-.add-drama{
+
+.add-drama {
     width: 400px;
     margin: 40px auto;
-    padding: 25px;
+    padding: 30px;
     text-align: center;
     border-radius: 15px;
     background-color: #f8f0ff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.add-drama h2{
+
+.add-drama h2 {
     margin-bottom: 10px;
+    font-size: 28px;
 }
-.add-drama p{
+
+.add-drama p {
     margin-bottom: 25px;
+    color: #555;
 }
-.add-drama label{
+
+.add-drama label {
     display: block;
     text-align: left;
     margin-top: 15px;
     margin-bottom: 5px;
     font-weight: bold;
 }
-.add-drama input{
+
+.add-drama input {
     width: 100%;
-    padding: 10px;
+    padding: 11px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 15px;
 }
-.add-drama button{
+
+.add-drama input:focus {
+    outline: none;
+    border-color: #b58de8;
+}
+
+.add-drama button {
     margin-top: 25px;
-    padding: 10px 20px;
+    padding: 11px 25px;
     border: none;
     border-radius: 8px;
+    background-color: #b58de8;
+    color: white;
+    font-weight: bold;
     cursor: pointer;
 }
+
+.add-drama button:hover {
+    background-color: #9d72d1;
+}
+
 
 /* Responsive Design für Tablets */
 @media (max-width: 800px) {

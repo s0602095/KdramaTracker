@@ -1,22 +1,26 @@
 
-<body>
-
-
 <div class="add-drama">
   <h2> Drama hinzufügen</h2>
 
   <p>Füge ein neues K-Drama hinzu 🎬</p>
 
   <label>🎬 Drama Name</label>
-  <input type="text" placeholder="z. B. Queen of Tears">
+  <input type="text"
+   placeholder="z. B. Queen of Tears" 
+   [(ngModel)]="name">
 
   <label>🎭 Genre</label>
-  <input type="text" placeholder="z. B. Romance">
+  <input type="text" 
+  placeholder="z. B. Romance"
+  [(ngModel)]="genre">
 
   <label>⭐ Bewertung</label>
-  <input type="number" min="1" max="10" placeholder="z. B. 9">
+  <input type="number" 
+   min="1"
+   max="10" 
+   placeholder="z. B. 9"
+   [(ngModel)]="bewertung">
 
   <button>➕ Drama hinzufügen</button>
 </div>
 
-</body>
