@@ -11,33 +11,59 @@ import { Router } from '@angular/router';
 })
 export class AddDrama {
 
+  // Eingaben aus dem Formular
   name = '';
   genre = '';
   bewertung = 0;
+  status = 'Noch offen';
+  folgen = 1;
+
+  // Hier wird das ausgewählte Bild gespeichert
+  bild: File | null = null;
 
   constructor(
     private http: HttpClient,
     private router: Router
   ) {}
 
-  addDrama() {
+  // Wird aufgerufen, wenn ein Bild ausgewählt wird
+  bildAuswaehlen(event: Event) {
 
-    const drama = {
-      name: this.name,
-      genre: this.genre,
-      bewertung: this.bewertung
-    };
+    // Das HTML-Input-Feld holen
+    const input = event.target as HTMLInputElement;
 
-    this.http.post('http://localhost:3000/dramas', drama)
-      .subscribe(() => {
-
-         // Speichern, welches Drama gerade hinzugefügt wurde
-        localStorage.setItem('neuesDrama', this.name);
-
-         // Danach zu "Meine Dramas" wechseln
-        this.router.navigate(['/dramas']);
-      });
-
+    // Prüfen, ob eine Datei ausgewählt wurde
+    if (input.files && input.files.length > 0) {
+      this.bild = input.files[0];
+    }
   }
 
+  addDrama() {
+
+    // FormData wird benutzt, weil wir auch eine Datei senden
+    const formData = new FormData();
+
+    // Normale Formulardaten hinzufügen
+    formData.append('name', this.name);
+    formData.append('genre', this.genre);
+    formData.append('bewertung', this.bewertung.toString());
+    formData.append('status', this.status);
+    formData.append('folgen', this.folgen.toString());
+
+    // Bild hinzufügen, wenn eines ausgewählt wurde
+    if (this.bild) {
+      formData.append('bild', this.bild);
+    }
+
+    // Daten an das Backend senden
+    this.http.post('http://localhost:3000/dramas', formData)
+      .subscribe(() => {
+
+        // Speichern, welches Drama gerade hinzugefügt wurde
+        localStorage.setItem('neuesDrama', this.name);
+
+        // Danach zu "Meine Dramas" wechseln
+        this.router.navigate(['/dramas']);
+      });
+  }
 }

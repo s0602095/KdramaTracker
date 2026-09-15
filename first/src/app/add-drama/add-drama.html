@@ -1,28 +1,64 @@
-
 <div class="add-drama">
-  <h2> Drama hinzufügen</h2>
+
+  <h2>Drama hinzufügen</h2>
 
   <p>Füge ein neues K-Drama hinzu 🎬</p>
 
   <label>🎬 Drama Name</label>
-  <input type="text"
-   placeholder="z. B. Queen of Tears" 
-   [(ngModel)]="name">
+  <input
+    type="text"
+    placeholder="z. B. Queen of Tears"
+    [(ngModel)]="name">
 
   <label>🎭 Genre</label>
-  <input type="text" 
-  placeholder="z. B. Romance"
-  [(ngModel)]="genre">
+  <input
+    type="text"
+    placeholder="z. B. Romance"
+    [(ngModel)]="genre">
 
   <label>⭐ Bewertung</label>
-  <input type="number" 
-   min="1"
-   max="10" 
-   placeholder="z. B. 9"
-   [(ngModel)]="bewertung">
+  <input
+    type="number"
+    min="1"
+    max="10"
+    placeholder="z. B. 9"
+    [(ngModel)]="bewertung">
 
-  <button type="button" (click)="addDrama()">➕ Drama hinzufügen</button>
+  <label>📺 Status</label>
+  <select [(ngModel)]="status">
 
+    <option value="Noch offen">
+      ⏳ Noch offen
+    </option>
+
+    <option value="Schaue ich gerade">
+      👀 Schaue ich gerade
+    </option>
+
+    <option value="Geschaut">
+      ✅ Geschaut
+    </option>
+
+  </select>
+
+  <label>🔢 Folgen</label>
+  <input
+    type="number"
+    min="1"
+    placeholder="z. B. 16"
+    [(ngModel)]="folgen">
+
+ <label>🖼️ Bild</label>
+ <input
+  type="file"
+  accept="image/*"
+  (change)="bildAuswaehlen($event)">
+
+  <button
+    type="button"
+    (click)="addDrama()">
+    ➕ Drama hinzufügen
+  </button>
 
 </div>
 
