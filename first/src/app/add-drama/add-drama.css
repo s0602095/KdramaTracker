@@ -1,100 +1,114 @@
-body {
-    margin: 0;
-}
-
 .add-drama {
-    width: 400px;
-    margin: 40px auto;
-    padding: 30px;
-    text-align: center;
-    border-radius: 15px;
-    background-color: #f8f0ff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* Überschrift */
 .add-drama h2 {
-    margin-bottom: 10px;
-    font-size: 28px;
+    margin: 0 0 8px;
+    text-align: left;
+    font-size: 30px;
+    color: #241b2f;
 }
 
-.add-drama p {
-    margin-bottom: 25px;
-    color: #555;
+/* Beschreibung */
+.add-drama > p {
+    margin: 0 0 30px;
+    text-align: left;
+    color: #777;
+    font-size: 16px;
 }
 
+/* Beschriftungen */
 .add-drama label {
     display: block;
-    text-align: left;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
 }
 
+/* Eingabefelder */
 .add-drama input {
     width: 100%;
-    padding: 11px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 15px;
-}
-
-.add-drama input:focus {
+    padding: 13px 15px;
+    border: 1px solid #d8d3df;
+    border-radius: 9px;
+    font-size: 16px;
+    background-color: #faf9fc;
     outline: none;
-    border-color: #b58de8;
 }
 
+/* Wenn man in ein Feld klickt */
+.add-drama input:focus {
+    border-color: #a855f7;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.12);
+}
+
+/* Button */
 .add-drama button {
-    margin-top: 25px;
-    padding: 11px 25px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 14px;
     border: none;
-    border-radius: 8px;
-    background-color: #b58de8;
+    border-radius: 9px;
+    background-color: #8b5cf6;
     color: white;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .add-drama button:hover {
-    background-color: #9d72d1;
+    background-color: #7c3aed;
 }
 
+/* Erfolgsmeldung */
+.success-message {
+    margin-top: 18px;
+    margin-bottom: 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background-color: #ecfdf3;
+    border: 1px solid #bbf7d0;
+    color: #287044;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
 
-/* Responsive Design für Tablets */
+/* Tablet */
 @media (max-width: 800px) {
-
     .add-drama {
-        width: auto;
-        max-width: 500px;
-        margin: 30px 20px;
-        padding: 25px;
+        margin: 35px 25px;
+        padding: 30px;
     }
-
 }
 
-
-/* Responsive Design für Handys */
+/* Handy */
 @media (max-width: 500px) {
-
     .add-drama {
-        margin: 20px 15px;
-        padding: 20px;
+        margin: 25px 15px;
+        padding: 25px 20px;
     }
 
     .add-drama h2 {
-        font-size: 24px;
+        font-size: 25px;
     }
 
-    .add-drama p {
+    .add-drama > p {
         font-size: 14px;
     }
 
     .add-drama input {
-        font-size: 14px;
+        font-size: 15px;
     }
-
-    .add-drama button {
-        width: 100%;
-    }
-
 }
