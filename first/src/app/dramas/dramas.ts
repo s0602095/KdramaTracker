@@ -14,7 +14,7 @@ export class Dramas implements OnInit {
   // Dramas aus MongoDB
   dramas: any[] = [];
 
-  // Standardmäßig "Alle"
+  // Standardmäßig werden alle Dramas angezeigt
   filter = 'alle';
 
   constructor(
@@ -22,24 +22,22 @@ export class Dramas implements OnInit {
     private changeDetector: ChangeDetectorRef
   ) {}
 
-  // Beim Öffnen der Seite Dramas laden
   ngOnInit() {
 
     this.http.get<any[]>('http://localhost:3000/dramas')
       .subscribe({
         next: (data) => {
 
-          // Daten speichern
+          // Daten aus MongoDB speichern
           this.dramas = data;
 
-          console.log('Dramas geladen:', this.dramas);
+          // Angular mitteilen, dass sich die Ansicht geändert hat
+          this.changeDetector.markForCheck();
 
-          // Angular neu aktualisieren
-          this.changeDetector.detectChanges();
         },
 
         error: (error) => {
-          console.log('Fehler beim Laden:', error);
+          console.log('Fehler:', error);
         }
       });
   }

@@ -5,26 +5,29 @@
     <p>Deine K-Dramas im Überblick</p>
   </section>
 
-  <!-- Filter -->
   <section class="filters">
 
-    <button [class.active]="filter === 'alle'"
-            (click)="setFilter('alle')">
+    <button
+      [class.active]="filter === 'alle'"
+      (click)="setFilter('alle')">
       Alle
     </button>
 
-    <button [class.active]="filter === 'geschaut'"
-            (click)="setFilter('geschaut')">
+    <button
+      [class.active]="filter === 'geschaut'"
+      (click)="setFilter('geschaut')">
       Geschaut
     </button>
 
-    <button [class.active]="filter === 'dabei'"
-            (click)="setFilter('dabei')">
+    <button
+      [class.active]="filter === 'dabei'"
+      (click)="setFilter('dabei')">
       Gerade dabei
     </button>
 
-    <button [class.active]="filter === 'offen'"
-            (click)="setFilter('offen')">
+    <button
+      [class.active]="filter === 'offen'"
+      (click)="setFilter('offen')">
       Noch offen
     </button>
 
@@ -32,29 +35,25 @@
 
   <section class="drama-container">
 
-    <!-- Dramas aus MongoDB anzeigen -->
     @for (drama of dramas; track drama._id) {
 
-      <!-- Prüfen, ob das Drama zum Filter passt -->
       @if (zeigeDrama(drama)) {
 
         <div class="drama-card">
 
           <div class="drama-info">
 
-            <!-- Name -->
             <h2>{{ drama.name }}</h2>
 
-            <!-- Bewertung -->
             <p class="rating">
               ⭐ {{ drama.bewertung }}/10
             </p>
 
-            <!-- Status -->
-            <p class="status"
-               [class.watched]="drama.status === 'Geschaut'"
-               [class.watching]="drama.status === 'Schaue ich gerade'"
-               [class.open]="drama.status === 'Noch offen'">
+            <p
+              class="status"
+              [class.watched]="drama.status === 'Geschaut'"
+              [class.watching]="drama.status === 'Schaue ich gerade'"
+              [class.open]="drama.status === 'Noch offen'">
 
               @if (drama.status === 'Geschaut') {
                 ✅
@@ -72,21 +71,21 @@
 
             </p>
 
-            <!-- Folgen -->
             <p>
               Folgen: {{ drama.folgen }}
             </p>
 
-            <!-- Details -->
             <a [routerLink]="['/drama-detail', drama.name]">
               <button>Details</button>
             </a>
 
           </div>
 
-          <!-- Bild -->
-          <img [src]="'bilder/' + drama.bild"
-               [alt]="drama.name">
+          @if (drama.bild) {
+            <img
+              [src]="'bilder/' + drama.bild"
+              [alt]="drama.name">
+          }
 
         </div>
 

@@ -30,6 +30,11 @@ export class AddDrama {
 
     this.http.post('http://localhost:3000/dramas', drama)
       .subscribe(() => {
+
+         // Speichern, welches Drama gerade hinzugefügt wurde
+        localStorage.setItem('neuesDrama', this.name);
+
+         // Danach zu "Meine Dramas" wechseln
         this.router.navigate(['/dramas']);
       });
 
