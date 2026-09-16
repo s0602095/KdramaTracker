@@ -11,13 +11,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Dramas implements OnInit {
 
-  // Dramas aus MongoDB
   dramas: any[] = [];
 
-  // Standardmäßig werden alle Dramas angezeigt
   filter = 'alle';
 
-  // ID des zuletzt hinzugefügten Dramas
   neuesDramaId: string | null = null;
 
   constructor(
@@ -27,52 +24,74 @@ export class Dramas implements OnInit {
 
   ngOnInit() {
 
-    // ID des zuletzt hinzugefügten Dramas aus dem Browser holen
+    // ID des neu hinzugefügten Dramas holen
     this.neuesDramaId = localStorage.getItem('neuesDramaId');
 
-    // Dramas aus dem Backend laden
+    // Alle Dramas vom Backend laden
     this.http.get<any[]>('http://localhost:3000/dramas')
       .subscribe({
+
         next: (data) => {
 
-          // Daten aus MongoDB speichern
+          // Alle Dramas übernehmen
           this.dramas = data;
 
-          // Angular mitteilen, dass sich die Ansicht geändert hat
-          this.changeDetector.markForCheck();
+          // Die bisherige Reihenfolge umdrehen
+          // Das Drama ganz unten kommt dadurch nach oben
+          this.dramas.reverse();
 
+          // Neues Drama ganz oben anzeigen
+          if (this.neuesDramaId) {
+
+            const neuesDrama = this.dramas.find(
+              drama => drama._id === this.neuesDramaId
+            );
+
+            if (neuesDrama) {
+
+              // Neues Drama aus der normalen Liste entfernen
+              this.dramas = this.dramas.filter(
+                drama => drama._id !== this.neuesDramaId
+              );
+
+              // Neues Drama ganz oben einfügen
+              this.dramas.unshift(neuesDrama);
+            }
+          }
+
+          // Angular über die Änderung informieren
+          this.changeDetector.markForCheck();
         },
 
         error: (error) => {
           console.log('Fehler:', error);
         }
+
       });
   }
 
-  // Filter ändern
+
+  // Filter auswählen
   setFilter(filter: string) {
     this.filter = filter;
   }
 
-  // Prüfen, ob Drama angezeigt werden soll
+
+  // Prüft, ob ein Drama zum ausgewählten Filter gehört
   zeigeDrama(drama: any): boolean {
 
-    // Alle Dramas anzeigen
     if (this.filter === 'alle') {
       return true;
     }
 
-    // Nur bereits geschaute Dramas
     if (this.filter === 'geschaut') {
       return drama.status === 'Geschaut';
     }
 
-    // Nur Dramas, die gerade geschaut werden
     if (this.filter === 'dabei') {
       return drama.status === 'Schaue ich gerade';
     }
 
-    // Nur noch offene Dramas
     if (this.filter === 'offen') {
       return drama.status === 'Noch offen';
     }
@@ -80,8 +99,13 @@ export class Dramas implements OnInit {
     return false;
   }
 
-  // Prüfen, ob dieses Drama das neu hinzugefügte Drama ist
+
+  // Prüft, ob dieses Drama neu hinzugefügt wurde
   istNeu(drama: any): boolean {
     return drama._id === this.neuesDramaId;
   }
+
 }
+
+
+
