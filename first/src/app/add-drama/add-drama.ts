@@ -56,14 +56,20 @@ export class AddDrama {
     }
 
     // Daten an das Backend senden
-    this.http.post('http://localhost:3000/dramas', formData)
-      .subscribe(() => {
+    this.http.post<any>('http://localhost:3000/dramas', formData)
+      .subscribe({
+        next: (data) => {
 
-        // Speichern, welches Drama gerade hinzugefügt wurde
-        localStorage.setItem('neuesDrama', this.name);
+          // ID des neu erstellten Dramas speichern
+          localStorage.setItem('neuesDramaId', data.insertedId);
 
-        // Danach zu "Meine Dramas" wechseln
-        this.router.navigate(['/dramas']);
+          // Danach zu "Meine Dramas" wechseln
+          this.router.navigate(['/dramas']);
+        },
+
+        error: (error) => {
+          console.log('Fehler beim Hinzufügen:', error);
+        }
       });
   }
 }

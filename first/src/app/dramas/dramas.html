@@ -43,7 +43,13 @@
 
           <div class="drama-info">
 
-            <h2>{{ drama.name }}</h2>
+            <h2>
+              {{ drama.name }}
+
+              @if (istNeu(drama)) {
+                <span class="neu">NEU</span>
+              }
+            </h2>
 
             <p class="rating">
               ⭐ {{ drama.bewertung }}/10
@@ -81,13 +87,14 @@
 
           </div>
 
-    @if (drama.bild) {
-  <img
-    [src]="drama.bild.startsWith('/uploads/')
-      ? 'http://localhost:3000' + drama.bild
-      : 'bilder/' + drama.bild"
-    [alt]="drama.name">
-}
+          @if (drama.bild) {
+            <img
+              [src]="drama.bild.startsWith('/uploads/')
+                ? 'http://localhost:3000' + drama.bild
+                : 'bilder/' + drama.bild"
+              [alt]="drama.name">
+          }
+
         </div>
 
       }

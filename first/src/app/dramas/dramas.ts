@@ -17,6 +17,9 @@ export class Dramas implements OnInit {
   // Standardmäßig werden alle Dramas angezeigt
   filter = 'alle';
 
+  // ID des zuletzt hinzugefügten Dramas
+  neuesDramaId: string | null = null;
+
   constructor(
     private http: HttpClient,
     private changeDetector: ChangeDetectorRef
@@ -24,6 +27,10 @@ export class Dramas implements OnInit {
 
   ngOnInit() {
 
+    // ID des zuletzt hinzugefügten Dramas aus dem Browser holen
+    this.neuesDramaId = localStorage.getItem('neuesDramaId');
+
+    // Dramas aus dem Backend laden
     this.http.get<any[]>('http://localhost:3000/dramas')
       .subscribe({
         next: (data) => {
@@ -50,22 +57,31 @@ export class Dramas implements OnInit {
   // Prüfen, ob Drama angezeigt werden soll
   zeigeDrama(drama: any): boolean {
 
+    // Alle Dramas anzeigen
     if (this.filter === 'alle') {
       return true;
     }
 
+    // Nur bereits geschaute Dramas
     if (this.filter === 'geschaut') {
       return drama.status === 'Geschaut';
     }
 
+    // Nur Dramas, die gerade geschaut werden
     if (this.filter === 'dabei') {
       return drama.status === 'Schaue ich gerade';
     }
 
+    // Nur noch offene Dramas
     if (this.filter === 'offen') {
       return drama.status === 'Noch offen';
     }
 
     return false;
+  }
+
+  // Prüfen, ob dieses Drama das neu hinzugefügte Drama ist
+  istNeu(drama: any): boolean {
+    return drama._id === this.neuesDramaId;
   }
 }
