@@ -1,101 +1,189 @@
-.add-drama {
-    max-width: 650px;
-    margin: 50px auto;
-    padding: 40px;
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
 
-.add-drama h2 {
-    margin: 0 0 8px;
-    text-align: left;
-    font-size: 30px;
-    color: #241b2f;
-}
 
-.add-drama > p {
-    margin: 0 0 30px;
-    text-align: left;
-    color: #777;
-    font-size: 16px;
-}
+.add-drama { 
+  max-width: 700px; 
+  margin: 50px auto; 
+  padding: 40px; 
+ 
+  background: #211a2b; 
+  border: 1px solid #30263a; 
+  border-radius: 20px; 
+ 
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); 
+ 
+  color: white; 
+} 
+ 
+ 
+/* ========================= 
+   ÜBERSCHRIFT 
+   ========================= */ 
+ 
+.add-drama h2 { 
+  margin: 0 0 8px; 
+ 
+  text-align: left; 
+ 
+  color: white; 
+  font-size: 32px; 
+} 
+ 
+.add-drama > p { 
+  margin: 0 0 30px; 
+ 
+  color: #b9afc5; 
+  font-size: 16px; 
+} 
+ 
+ 
+/* ========================= 
+   LABELS 
+   ========================= */ 
+ 
+.add-drama label { 
+  display: block; 
+ 
+  margin-top: 20px; 
+  margin-bottom: 8px; 
+ 
+  color: #ddd3e5; 
+ 
+  font-size: 14px; 
+  font-weight: 600; 
+} 
+ 
+ 
+/* ========================= 
+   EINGABEFELDER 
+   ========================= */ 
+ 
+.add-drama input, 
+.add-drama select { 
+  width: 100%; 
+  box-sizing: border-box; 
+ 
+  padding: 13px 15px; 
+ 
+  border: 1px solid #3a3045; 
+  border-radius: 10px; 
+ 
+  background: #17121f; 
+  color: white; 
+ 
+  font-size: 15px; 
+ 
+  outline: none; 
+ 
+  transition: 0.2s; 
+} 
+ 
+ 
+/* Platzhalter */ 
+ 
+.add-drama input::placeholder { 
+  color: #81758c; 
+} 
+ 
+ 
+/* Wenn Feld ausgewählt wird */ 
+ 
+.add-drama input:focus, 
+.add-drama select:focus { 
+  border-color: #a855f7; 
+ 
+  background: #1c1525; 
+ 
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.12); 
+} 
+ 
+ 
+/* Dropdown */ 
+ 
+.add-drama select { 
+  cursor: pointer; 
+} 
+ 
+ 
+/* ========================= 
+   DATEI-AUSWAHL 
+   ========================= */ 
+ 
+.add-drama input[type="file"] { 
+  padding: 10px; 
+ 
+  cursor: pointer; 
+} 
+ 
+ 
+/* ========================= 
+   BUTTON 
+   ========================= */ 
+ 
+.add-drama button { 
+  width: 100%; 
+ 
+  margin-top: 30px; 
+  padding: 14px; 
+ 
+  border: none; 
+  border-radius: 11px; 
+ 
+  background: #a855f7; 
+  color: white; 
+ 
+  font-size: 15px; 
+  font-weight: 600; 
+ 
+  cursor: pointer; 
+ 
+  transition: 0.2s; 
+} 
+ 
+.add-drama button:hover { 
+  background: #9333ea; 
+ 
+  transform: translateY(-2px); 
+ 
+  box-shadow: 0 8px 18px rgba(168, 85, 247, 0.25); 
+} 
 
-.add-drama label {
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #333;
-}
-
-.add-drama input,
-.add-drama select {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 13px 15px;
-    border: 1px solid #d8d3df;
-    border-radius: 9px;
-    font-size: 16px;
-    background-color: #faf9fc;
-    outline: none;
-}
-
-.add-drama input:focus,
-.add-drama select:focus {
-    border-color: #a855f7;
-    background-color: white;
-    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.12);
-}
-
-.add-drama select {
-    cursor: pointer;
-}
-
-.add-drama button {
-    width: 100%;
-    margin-top: 30px;
-    padding: 14px;
-    border: none;
-    border-radius: 9px;
-    background-color: #8b5cf6;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.add-drama button:hover {
-    background-color: #7c3aed;
-}
-
-@media (max-width: 800px) {
-
-    .add-drama {
-        margin: 35px 25px;
-        padding: 30px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .add-drama {
-        margin: 25px 15px;
-        padding: 25px 20px;
-    }
-
-    .add-drama h2 {
-        font-size: 25px;
-    }
-
-    .add-drama > p {
-        font-size: 14px;
-    }
-
-    .add-drama input,
-    .add-drama select {
-        font-size: 15px;
-    }
+ 
+/* ========================= 
+   TABLET 
+   ========================= */ 
+ 
+@media (max-width: 800px) { 
+ 
+  .add-drama { 
+    margin: 35px 25px; 
+    padding: 30px; 
+  } 
+} 
+ 
+ 
+/* ========================= 
+   HANDY 
+   ========================= */ 
+ 
+@media (max-width: 500px) { 
+ 
+  .add-drama { 
+    margin: 25px 15px; 
+    padding: 25px 20px; 
+ 
+    border-radius: 16px; 
+  } 
+ 
+  .add-drama h2 { 
+    font-size: 26px; 
+  } 
+ 
+  .add-drama > p { 
+    font-size: 14px; 
+  } 
+ 
+  .add-drama input, 
+  .add-drama select { 
+    font-size: 14px; 
+  } 
 }

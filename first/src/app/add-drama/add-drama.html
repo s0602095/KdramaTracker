@@ -1,64 +1,116 @@
+
 <div class="add-drama">
 
-  <h2>Drama hinzufügen</h2>
+  <div class="add-card">
 
-  <p>Füge ein neues K-Drama hinzu 🎬</p>
+    <!-- HEADER -->
+    <div class="add-header">
+      <div class="add-icon">🎬</div>
 
-  <label>🎬 Drama Name</label>
-  <input
-    type="text"
-    placeholder="z. B. Queen of Tears"
-    [(ngModel)]="name">
+      <h2>Drama hinzufügen</h2>
 
-  <label>🎭 Genre</label>
-  <input
-    type="text"
-    placeholder="z. B. Romance"
-    [(ngModel)]="genre">
+      <p>
+        Füge ein neues K-Drama zu deiner Sammlung hinzu.
+      </p>
+    </div>
 
-  <label>⭐ Bewertung</label>
-  <input
-    type="number"
-    min="1"
-    max="10"
-    placeholder="z. B. 9"
-    [(ngModel)]="bewertung">
 
-  <label>📺 Status</label>
-  <select [(ngModel)]="status">
+    <!-- DRAMA NAME -->
+    <label>🎬 Drama Name</label>
 
-    <option value="Noch offen">
-      ⏳ Noch offen
-    </option>
+    <input
+      type="text"
+      placeholder="z. B. Queen of Tears"
+      [(ngModel)]="name">
 
-    <option value="Schaue ich gerade">
-      👀 Schaue ich gerade
-    </option>
 
-    <option value="Geschaut">
-      ✅ Geschaut
-    </option>
+    <!-- GENRE -->
+    <label>🎭 Genre</label>
 
-  </select>
+    <input
+      type="text"
+      placeholder="z. B. Romance"
+      [(ngModel)]="genre">
 
-  <label>🔢 Folgen</label>
-  <input
-    type="number"
-    min="1"
-    placeholder="z. B. 16"
-    [(ngModel)]="folgen">
 
- <label>🖼️ Bild</label>
- <input
-  type="file"
-  accept="image/*"
-  (change)="bildAuswaehlen($event)">
+    <!-- BEWERTUNG + FOLGEN -->
+    <div class="form-row">
 
-  <button
-    type="button"
-    (click)="addDrama()">
-    ➕ Drama hinzufügen
-  </button>
+      <div>
+        <label>⭐ Bewertung</label>
+
+        <input
+          type="number"
+          min="1"
+          max="10"
+          placeholder="z. B. 9"
+          [(ngModel)]="bewertung">
+      </div>
+
+      <div>
+        <label>🔢 Folgen</label>
+
+        <input
+          type="number"
+          min="1"
+          placeholder="z. B. 16"
+          [(ngModel)]="folgen">
+      </div>
+
+    </div>
+
+
+    <!-- STATUS -->
+    <label>📺 Status</label>
+
+    <select [(ngModel)]="status">
+
+      <option value="Noch offen">
+        ⏳ Noch offen
+      </option>
+
+      <option value="Schaue ich gerade">
+        👀 Schaue ich gerade
+      </option>
+
+      <option value="Geschaut">
+        ✅ Geschaut
+      </option>
+
+    </select>
+
+
+    <!-- BILD -->
+    <label>🖼️ Poster</label>
+
+    <div class="poster-upload">
+
+      <span>📷</span>
+
+      <div>
+        <strong>Poster auswählen</strong>
+        <small>Bilddatei auswählen</small>
+      </div>
+
+      <input
+        type="file"
+        accept="image/*"
+        (change)="bildAuswaehlen($event)">
+
+    </div>
+
+
+    <!-- BUTTON -->
+    <button
+      type="button"
+      (click)="addDrama()">
+
+      ➕ Drama hinzufügen
+
+    </button>
+
+  </div>
 
 </div>
+
 
