@@ -1,195 +1,390 @@
-
 .dramas-page {
-    min-height: 100vh;
-    padding: 45px 30px;
-    background-color: #f8f5fc;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.page-header{
-    text-align: center;
-    margin-bottom: 35px;
-
-}
-.page-header h1{
-    font-size: 34px;
-    margin-bottom: 10px;
-
-}
-.page-header p{
-    color: #777;
-    font-size: 17px;
-}
-/*filter */
-
-.filters{
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 40px;
-}
-.filters button{
-    padding: 10px 18px;
-    border: none;
-    border-radius: 10px;
-    background-color: white;
-    color: #555;
-    cursor: pointer;
-    font-size: 15px;
+  min-height: 100vh;
+  padding: 45px 40px 70px;
+  background: #17121f;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.filters button:hover{
-    background-color: #eee5ff;
-    color: #8b5cf6;
-}
-.filters button.active{
-    background-color: #8b5cf6;
-    color: white;
+
+/* =========================
+   HEADER
+   ========================= */
+
+.page-header {
+  max-width: 1200px;
+  margin: 0 auto 35px;
+  text-align: left;
 }
 
-/* Drama-Karten */
-.drama-container{
-    max-width: 900px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
+.page-header h1 {
+  margin: 0;
+  color: white;
+  font-size: 38px;
+  font-weight: 700;
 }
 
-.drama-card{
-    padding: 25px;
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px #ddd;
-    transition: 0.2s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.page-header p {
+  margin-top: 8px;
+  color: #b9afc5;
+  font-size: 16px;
 }
 
-.drama-card:hover{
-    transform: translateY(-5px);
+
+/* =========================
+   FILTER
+   ========================= */
+
+.filters {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.drama-card h2{
-    margin-top: 0;
-    font-size: 21px;
+.filters button {
+  padding: 10px 18px;
+
+  border: 1px solid #3a3045;
+  border-radius: 25px;
+
+  background: #211a2b;
+  color: #c8bfd2;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.2s;
 }
 
-.rating{
-    font-size: 18px;
+.filters button:hover {
+  background: #30233e;
+  color: white;
 }
 
-.status{
-    margin-bottom: 20px;
-}
-.watched{
-    color: #16a34a;
-}
-.watching{
-    color: #8b5cf6;
-}
-.open{
-    color: #777;
+.filters button.active {
+  background: #a855f7;
+  border-color: #a855f7;
+  color: white;
+
+  box-shadow: 0 5px 18px rgba(168, 85, 247, 0.25);
 }
 
-/* Details-Button */
+
+/* =========================
+   DRAMA GRID
+   ========================= */
+
+.drama-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+}
+
+
+/* =========================
+   DRAMA CARD
+   ========================= */
+
+.drama-card {
+  position: relative;
+
+  padding: 0;
+
+  background: #211a2b;
+
+  border: 1px solid #30263a;
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+  transition: 0.25s;
+}
+
+.drama-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #68458a;
+
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   POSTER
+   ========================= */
+
+.drama-card img {
+  width: 100%;
+  height: 280px;
+
+  object-fit: cover;
+
+  margin: 0;
+
+  display: block;
+
+  border-radius: 0;
+}
+
+
+/* =========================
+   INFO
+   ========================= */
+
+.drama-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.drama-card h2 {
+  margin: 0 0 10px;
+
+  color: white;
+
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+
+/* =========================
+   BEWERTUNG
+   ========================= */
+
+.rating {
+  margin: 0 0 8px;
+
+  color: #f5d76e;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   STATUS
+   ========================= */
+
+.status {
+  display: inline-block;
+
+  width: fit-content;
+
+  margin: 0 0 12px;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.watched {
+  background: #163d29;
+  color: #6ee7a0;
+}
+
+.watching {
+  background: #332052;
+  color: #c084fc;
+}
+
+.open {
+  background: #302d34;
+  color: #bbb;
+}
+
+
+/* =========================
+   FOLGEN
+   ========================= */
+
+.drama-info > p:not(.rating):not(.status) {
+  margin: 0 0 15px;
+
+  color: #aaa1b3;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   DETAILS BUTTON
+   ========================= */
 
 .drama-card button {
-  padding: 9px 18px;
+  width: 100%;
+
+  margin-top: auto;
+
+  padding: 10px;
+
   border: none;
-  border-radius: 9px;
-  background-color: #8b5cf6;
+  border-radius: 10px;
+
+  background: #a855f7;
   color: white;
+
   cursor: pointer;
+
   font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.2s;
 }
 
 .drama-card button:hover {
-  background-color: #7c3aed;
+  background: #9333ea;
 }
 
 
-.drama-info {
-    flex: 1;
-}
+/* =========================
+   NEU
+   ========================= */
 
-.drama-card img {
-    width: 90px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-left: 20px;
-}
-/* NEU-Badge neben dem Drama-Namen */
 .neu {
-  display: inline-block;
-  margin-left: 8px;
-  padding: 4px 8px;
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+  left: auto;
+
+  margin: 0;
+
+  padding: 6px 10px;
+
   border-radius: 8px;
-  background-color: #a855f7;
+
+  background: #a855f7;
   color: white;
-  font-size: 12px;
+
+  font-size: 11px;
   font-weight: bold;
-}
 
-/* Responsive Design für Tablets */
-@media (max-width: 800px) {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
-    .dramas-page {
-        padding: 30px 20px;
-    }
-
-    .drama-container {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-    }
-
-    .filters {
-        flex-wrap: wrap;
-    }
+  z-index: 2;
 }
 
 
-/* Responsive Design für Handys */
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+
+  .drama-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .drama-card img {
+    height: 250px;
+  }
+}
+
+
+/* =========================
+   KLEINER LAPTOP / TABLET
+   ========================= */
+
+@media (max-width: 750px) {
+
+  .dramas-page {
+    padding: 35px 20px 50px;
+  }
+
+  .drama-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-header h1 {
+    font-size: 32px;
+  }
+
+  .drama-card img {
+    height: 260px;
+  }
+}
+
+
+/* =========================
+   HANDY
+   ========================= */
+
 @media (max-width: 500px) {
 
-    .dramas-page {
-        padding: 25px 15px;
-    }
+  .dramas-page {
+    padding: 25px 15px 40px;
+  }
 
-    .page-header h1 {
-        font-size: 28px;
-    }
+  .page-header h1 {
+    font-size: 28px;
+  }
 
-    .page-header p {
-        font-size: 15px;
-    }
+  .page-header p {
+    font-size: 14px;
+  }
 
-    .filters {
-        gap: 8px;
-    }
+  .filters {
+    margin-bottom: 30px;
+  }
 
-    .filters button {
-        padding: 8px 12px;
-        font-size: 13px;
-    }
+  .filters button {
+    padding: 8px 13px;
+    font-size: 12px;
+  }
 
-    .drama-card {
-        padding: 18px;
-    }
+  .drama-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
 
-    .drama-card h2 {
-        font-size: 18px;
-    }
+  .drama-card {
+    border-radius: 14px;
+  }
 
-    .drama-card img {
-        width: 70px;
-        height: 95px;
-        margin-left: 12px;
-    }
+  .drama-card img {
+    height: 210px;
+  }
 
-    .drama-card button {
-        padding: 8px 12px;
-        font-size: 13px;
-    }
+  .drama-info {
+    padding: 12px;
+  }
+
+  .drama-card h2 {
+    font-size: 15px;
+  }
+
+  .rating {
+    font-size: 13px;
+  }
+
+  .status {
+    font-size: 10px;
+  }
+
+  .drama-info > p:not(.rating):not(.status) {
+    font-size: 11px;
+  }
+
+  .drama-card button {
+    padding: 8px;
+    font-size: 12px;
+  }
 }
