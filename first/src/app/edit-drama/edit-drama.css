@@ -1,145 +1,178 @@
 .edit-container {
-  max-width: 800px;
-  margin: 35px auto;
-  padding: 20px;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #f8f5fb;
+  border-radius: 25px;
 }
 
+/* Überschrift */
 .edit-container h1 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  color: #241b2f;
+  font-size: 32px;
 }
 
+/* Karte */
 .edit-card {
-  background: #fff;
-  padding: 35px;
-  border-radius: 20px;
-  border: 1px solid #eee;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 35px rgba(36, 27, 47, 0.15);
 }
 
+/* Labels */
 label {
   display: block;
-  margin: 18px 0 7px;
-  font-size: 14px;
-  font-weight: 600;
+  margin: 20px 0 8px;
+  color: #3b2b4d;
+  font-size: 15px;
+  font-weight: 700;
 }
 
+/* Eingabefelder */
 input,
 select,
 textarea {
   width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background: #fafafa;
   box-sizing: border-box;
-  font-size: 14px;
+
+  padding: 14px 16px;
+
+  border: 2px solid #eee;
+  border-radius: 12px;
+
+  background: #fafafa;
+
+  font-size: 15px;
+  font-family: inherit;
+
+  transition: 0.2s;
 }
 
+/* Feld angeklickt */
 input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #c98bb5;
+
+  border-color: #a855f7;
+
   background: white;
+
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.12);
 }
 
+/* Beschreibung */
 textarea {
-  min-height: 120px;
+  min-height: 150px;
   resize: vertical;
 }
 
+/* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-top: 30px;
+
+  margin-top: 35px;
 }
 
+/* Allgemeiner Button */
 button {
-  padding: 12px 25px;
+  padding: 14px 30px;
+
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+
   cursor: pointer;
-  font-size: 14px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: 0.2s;
 }
 
+/* Speichern */
 .save {
-  background: #c98bb5;
+  background: #a855f7;
   color: white;
 }
 
-button:not(.save) {
-  background: #f1f1f1;
-}
-
-button:hover {
+/* Speichern Hover */
+.save:hover {
+  background: #9333ea;
   transform: translateY(-2px);
 }
 
-/* Responsive Design für Tablet */
-@media (max-width: 700px) {
+/* Abbrechen */
+button:not(.save) {
+  background: #eeeeee;
+  color: #333;
+}
 
-    /* Weniger Abstand am Rand */
-    .edit-container {
-        margin: 25px auto;
-        padding: 15px;
-    }
-
-    /* Karte etwas kleiner */
-    .edit-card {
-        padding: 25px;
-    }
-
-    /* Überschrift kleiner */
-    .edit-container h1 {
-        font-size: 27px;
-    }
-
-    /* Buttons etwas kleiner */
-    button {
-        padding: 11px 20px;
-    }
+/* Abbrechen Hover */
+button:not(.save):hover {
+  background: #dddddd;
+  transform: translateY(-2px);
 }
 
 
-/* Responsive Design für Handy */
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .edit-container {
+    margin: 25px auto;
+    padding: 15px;
+  }
+
+  .edit-card {
+    padding: 28px;
+  }
+
+  .edit-container h1 {
+    font-size: 27px;
+  }
+}
+
+
+/* =========================
+   HANDY
+   ========================= */
+
 @media (max-width: 500px) {
 
-    /* Weniger Abstand auf dem Handy */
-    .edit-container {
-        margin: 20px auto;
-        padding: 10px;
-    }
+  .edit-container {
+    margin: 20px auto;
+    padding: 10px;
+  }
 
-    /* Überschrift kleiner */
-    .edit-container h1 {
-        font-size: 23px;
-        margin-bottom: 20px;
-    }
+  .edit-container h1 {
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
 
-    /* Karte nutzt die verfügbare Breite */
-    .edit-card {
-        padding: 20px 15px;
-        border-radius: 15px;
-    }
+  .edit-card {
+    padding: 22px 16px;
+    border-radius: 17px;
+  }
 
-    /* Eingabefelder etwas kleiner */
-    input,
-    select,
-    textarea {
-        padding: 10px 12px;
-        font-size: 14px;
-    }
+  input,
+  select,
+  textarea {
+    padding: 11px 12px;
+  }
 
-    /* Buttons untereinander */
-    .buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    /* Buttons volle Breite */
-    button {
-        width: 100%;
-    }
+  button {
+    width: 100%;
+  }
 }
