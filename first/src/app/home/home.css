@@ -3,141 +3,183 @@
 }
 
 
-.home {
-  height: 70vh;
-  padding: 20px;
+/* =========================
+   HOME
+   ========================= */
 
-  background-color: #faf8ff;
+.home {
+  min-height: calc(100vh - 75px - 115px);
+
+  padding: 40px;
+
+  background: #17121f;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+/* =========================
+   WILLKOMMENS-KARTE
+   ========================= */
+
 .welcome {
   width: 90%;
   max-width: 750px;
-  padding: 40px;
+
+  padding: 45px;
 
   text-align: center;
 
-  background: white;
-  border-radius: 25px;
+  background: #211a2b;
 
-  box-shadow: 0 8px 25px rgba(80, 60, 100, 0.12);
+  border: 1px solid #30263a;
+  border-radius: 20px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
+
+
+
+/* =========================
+   K-DRAMA TRACKER
+   ========================= */
+
+.welcome-small {
+  margin: 0 0 10px;
+
+  color: #a855f7;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   ÜBERSCHRIFT
+   ========================= */
 
 .welcome h1 {
   margin: 0 0 10px;
 
+  color: white;
+
   font-size: 32px;
-  color: #6d4cc2;
 }
 
-.welcome p {
+
+/* =========================
+   TEXT
+   ========================= */
+
+.welcome > p:last-child {
   margin: 0;
 
-  font-size: 17px;
-  color: #777;
+  color: #b9afc5;
+
+  font-size: 16px;
 }
 
 
-/* Footer */
+/* =========================
+   FOOTER
+   ========================= */
+
 .footer {
-  height: 115px;
+  min-height: 115px;
 
   padding: 25px 20px;
 
-  background-color: #30283d;
-  color: white;
+  background: #211a2b;
+
+  border-top: 1px solid #30263a;
 
   text-align: center;
 }
 
-.footer-content h3 {
-  margin: 0 0 8px;
-
-  font-size: 21px;
-}
 
 .footer-content p {
   margin: 6px 0;
 
   color: #d8d3df;
+
+  font-size: 14px;
 }
+
 
 .footer .copyright {
   margin-top: 15px;
 
-  font-size: 13px;
-  color: #aaa;
+  color: #81758c;
+
+  font-size: 12px;
 }
-/* Responsive Design für Tablet */
+
+
+/* =========================
+   TABLET
+   ========================= */
+
 @media (max-width: 700px) {
 
-    /* Home-Bereich etwas kleiner machen */
-    .home {
-        height: 65vh;
-        padding: 15px;
-    }
+  .home {
+    padding: 30px 20px;
+  }
 
-    /* Willkommensbox kleiner machen */
-    .welcome {
-        width: 95%;
-        padding: 30px 20px;
-    }
+  .welcome {
+    padding: 35px 25px;
+  }
 
-    /* Überschrift kleiner */
-    .welcome h1 {
-        font-size: 27px;
-    }
+  .welcome h1 {
+    font-size: 28px;
+  }
 
-    /* Text kleiner */
-    .welcome p {
-        font-size: 16px;
-    }
 }
 
 
-/* Responsive Design für Handy */
+/* =========================
+   HANDY
+   ========================= */
+
 @media (max-width: 500px) {
 
-    /* Weniger Abstand auf dem Handy */
-    .home {
-        height: 60vh;
-        padding: 10px;
-    }
+  .home {
+    padding: 25px 15px;
+  }
 
-    /* Box nimmt fast die ganze Breite ein */
-    .welcome {
-        width: 100%;
-        padding: 25px 15px;
-        border-radius: 18px;
-    }
+  .welcome {
+    width: 100%;
+    padding: 30px 20px;
 
-    /* Überschrift kleiner */
-    .welcome h1 {
-        font-size: 23px;
-    }
+    border-radius: 16px;
+  }
 
-    /* Text kleiner */
-    .welcome p {
-        font-size: 14px;
-    }
+  .welcome-icon {
+    width: 55px;
+    height: 55px;
 
-    /* Footer etwas kleiner */
-    .footer {
-        height: auto;
-        padding: 20px 10px;
-    }
+    font-size: 24px;
+  }
 
-    /* Footer-Text kleiner */
-    .footer-content p {
-        font-size: 14px;
-    }
+  .welcome-small {
+    font-size: 10px;
+  }
 
-    /* Copyright kleiner */
-    .footer .copyright {
-        font-size: 12px;
-    }
+  .welcome h1 {
+    font-size: 24px;
+  }
+
+  .welcome > p:last-child {
+    font-size: 14px;
+  }
+
+  .footer {
+    min-height: auto;
+
+    padding: 20px 10px;
+  }
+
 }
