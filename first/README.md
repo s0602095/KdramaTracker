@@ -1,59 +1,140 @@
-# First
+# 🎬 K-Drama Tracker
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+Mein K-Drama Tracker ist ein WebTech-Projekt von der HTW Berlin.
 
-## Development server
+Mit der Webseite kann ich meine K-Dramas speichern und verwalten.
+Ich kann neue Serien hinzufügen, Informationen bearbeiten, Serien löschen und mir die Details anschauen.
 
-To start a local development server, run:
+---
+
+## 🖥️ Meine Webseite
+
+### 🏠 Startseite
+
+![Startseite](first/screenshots/home.png)
+
+---
+
+### 📺 Meine Dramas
+
+Hier werden meine gespeicherten K-Dramas angezeigt.
+
+![Meine Dramas](first/screenshots/dramas.png)
+
+---
+
+### ➕ Drama hinzufügen
+
+Hier kann ich ein neues K-Drama mit Name, Genre, Bewertung, Status, Folgen und Poster hinzufügen.
+
+![Drama hinzufügen](screenshots/add.png)
+![Drama hinzufügen](screenshots/add2.png)
+
+---
+
+### 🔎 Drama Details
+
+Hier sehe ich die Informationen zu einem Drama und das dazugehörige Poster.
+
+![Drama Details](screenshots/detail.png)
+
+---
+
+## ✨ Funktionen
+
+* 🎬 K-Dramas hinzufügen
+* 🖼️ Poster hochladen
+* 📺 Dramas anzeigen
+* 🔎 Details zu einem Drama anzeigen
+* ✏️ Dramas bearbeiten
+* 🗑️ Dramas löschen
+* ⭐ Bewertung speichern
+* 🎭 Genre speichern
+* 🔢 Folgen speichern
+* 📋 Nach Status filtern
+
+---
+
+## 🛠️ Verwendete Technologien
+
+Für mein Projekt benutze ich:
+
+* Angular
+* TypeScript
+* HTML
+* CSS
+* Node.js
+* Express
+* MongoDB
+
+Für den Poster-Upload benutze ich außerdem Multer.
+
+---
+
+## 📁 Projekt
+
+Das Projekt besteht aus einem Angular-Frontend und einem Node.js-Backend.
+
+```text
+WebTech2026
+│
+├── first
+│   └── Angular
+│
+├── HTW
+│   └── Semester_2
+│       └── WebTech
+│           └── backend
+│
+└── README.md
+```
+
+---
+
+## 🚀 Projekt starten
+
+### Frontend
 
 ```bash
+cd first
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Danach im Browser öffnen:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Backend
 
 ```bash
-ng generate --help
+cd HTW/Semester_2/WebTech/backend
+node server.js
 ```
 
-## Building
+Das Backend läuft auf:
 
-To build the project run:
-
-```bash
-ng build
+```text
+http://localhost:3000
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🗄️ Datenbank
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Für mein Projekt benutze ich MongoDB.
 
-```bash
-ng test
-```
+Die Dramas werden in der Datenbank gespeichert und können über das Backend hinzugefügt, angezeigt, bearbeitet und gelöscht werden.
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🎓 WebTech Projekt
 
-```bash
-ng e2e
-```
+**HTW Berlin – WebTech 2026**
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+🎬 K-Drama Tracker
+💜 Mein Projekt zur Verwaltung meiner K-Dramas
 
-## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
