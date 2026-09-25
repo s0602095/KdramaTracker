@@ -1,178 +1,205 @@
 .edit-container {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 30px;
-  background: #f8f5fb;
-  border-radius: 25px;
+  min-height: 100vh;
+  padding: 45px 40px 70px;
+  box-sizing: border-box;
+  background: #17121f;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 
 /* Überschrift */
+
 .edit-container h1 {
-  text-align: center;
-  margin-bottom: 35px;
-  color: #241b2f;
-  font-size: 32px;
-}
+  max-width: 900px;
+  margin: 0 auto 30px;
 
-/* Karte */
-.edit-card {
-  background: white;
-  padding: 40px;
-  border-radius: 25px;
-  box-shadow: 0 10px 35px rgba(36, 27, 47, 0.15);
-}
-
-/* Labels */
-label {
-  display: block;
-  margin: 20px 0 8px;
-  color: #3b2b4d;
-  font-size: 15px;
+  color: white;
+  font-size: 38px;
   font-weight: 700;
 }
 
+
+/* Hauptkarte */
+
+.edit-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+
+  background: #211a2b;
+  border: 1px solid #30263a;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+  box-sizing: border-box;
+}
+
+
+/* Labels */
+
+.edit-card label {
+  display: block;
+
+  margin-top: 20px;
+  margin-bottom: 8px;
+
+  color: #ddd3e5;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
 /* Eingabefelder */
-input,
-select,
-textarea {
+
+.edit-card input,
+.edit-card select,
+.edit-card textarea {
   width: 100%;
   box-sizing: border-box;
 
-  padding: 14px 16px;
+  padding: 13px 15px;
 
-  border: 2px solid #eee;
-  border-radius: 12px;
+  background: #17121f;
+  color: white;
 
-  background: #fafafa;
+  border: 1px solid #3a3045;
+  border-radius: 10px;
 
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
-  font-family: inherit;
+
+  outline: none;
 
   transition: 0.2s;
 }
 
-/* Feld angeklickt */
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
 
-  border-color: #a855f7;
+/* Textarea */
 
-  background: white;
-
-  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.12);
-}
-
-/* Beschreibung */
-textarea {
-  min-height: 150px;
+.edit-card textarea {
+  min-height: 120px;
   resize: vertical;
 }
 
-/* Buttons */
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
 
-  margin-top: 35px;
+/* Wenn man in ein Feld klickt */
+
+.edit-card input:focus,
+.edit-card select:focus,
+.edit-card textarea:focus {
+  border-color: #a855f7;
+  background: #1c1525;
+
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.12);
 }
 
-/* Allgemeiner Button */
-button {
-  padding: 14px 30px;
+
+/* Buttons */
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+
+.buttons button {
+  flex: 1;
+
+  padding: 11px 20px;
 
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
+
+  background: #a855f7;
+  color: white;
 
   cursor: pointer;
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 
   transition: 0.2s;
 }
 
-/* Speichern */
-.save {
-  background: #a855f7;
-  color: white;
+
+.buttons button:hover {
+  background: #9333ea;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(168, 85, 247, 0.25);
 }
 
-/* Speichern Hover */
-.save:hover {
-  background: #9333ea;
-  transform: translateY(-2px);
-}
 
 /* Abbrechen */
-button:not(.save) {
-  background: #eeeeee;
-  color: #333;
+
+.buttons button:last-child {
+  background: #30263a;
+  color: #ddd3e5;
 }
 
-/* Abbrechen Hover */
-button:not(.save):hover {
-  background: #dddddd;
+
+.buttons button:last-child:hover {
+  background: #3a3045;
+
   transform: translateY(-2px);
+
+  box-shadow: none;
+}
+.edit-card:hover {
+  border-color: #68458a;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
 }
 
 
-/* =========================
-   TABLET
-   ========================= */
+/* Tablet */
 
 @media (max-width: 700px) {
 
   .edit-container {
-    margin: 25px auto;
-    padding: 15px;
-  }
-
-  .edit-card {
-    padding: 28px;
+    padding: 35px 20px 50px;
   }
 
   .edit-container h1 {
-    font-size: 27px;
+    font-size: 32px;
+  }
+
+  .edit-card {
+    padding: 25px;
   }
 }
 
 
-/* =========================
-   HANDY
-   ========================= */
+/* Handy */
 
 @media (max-width: 500px) {
 
   .edit-container {
-    margin: 20px auto;
-    padding: 10px;
+    padding: 25px 15px 40px;
   }
 
   .edit-container h1 {
-    font-size: 23px;
-    margin-bottom: 20px;
+    font-size: 28px;
   }
 
   .edit-card {
-    padding: 22px 16px;
-    border-radius: 17px;
+    padding: 18px;
+    border-radius: 14px;
   }
 
-  input,
-  select,
-  textarea {
-    padding: 11px 12px;
+  .edit-card input,
+  .edit-card select,
+  .edit-card textarea {
+    font-size: 13px;
   }
 
   .buttons {
     flex-direction: column;
-    gap: 10px;
   }
 
-  button {
+  .buttons button {
     width: 100%;
   }
 }

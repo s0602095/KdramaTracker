@@ -1,18 +1,29 @@
+.add-drama {
+  min-height: calc(100vh - 75px);
+  box-sizing: border-box;
 
+  padding: 50px 20px 70px;
 
-.add-drama { 
-  max-width: 700px; 
-  margin: 50px auto; 
-  padding: 40px; 
- 
-  background: #211a2b; 
-  border: 1px solid #30263a; 
-  border-radius: 20px; 
- 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); 
- 
-  color: white; 
-} 
+  background: #17121f;
+
+  color: white;
+}
+
+.add-card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+
+  background: #211a2b;
+  border: 1px solid #30263a;
+  border-radius: 20px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+.add-card:hover {
+  border-color: #68458a;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
  
  
 /* ========================= 
@@ -146,6 +157,7 @@
  
   box-shadow: 0 8px 18px rgba(168, 85, 247, 0.25); 
 } 
+
 
  
 /* ========================= 

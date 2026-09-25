@@ -24,7 +24,7 @@ export const routes: Routes = [
     component: AddDrama
   },
 
-  // Detailseite mit Drama-Namen
+  // Detailseite mit dem Namen des Dramas
   {
     path: 'drama-detail/:name',
     component: DramaDetail
